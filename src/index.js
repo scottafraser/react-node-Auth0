@@ -45,17 +45,17 @@ app.get('/:id', (req, res) => {
 });
 
 const checkJwt = jwt({
-    secret: jwksRsa.expressJwtSecret({
-        cache: true,
-        rateLimit: true,
-        jwksRequestsPerMinute: 5,
-        jwksUri: `https://<YOUR_AUTH0_DOMAIN>/.well-known/jwks.json`
-    }),
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+      jwksUri: `https://scottafraser.auth0.com.well-known/jwks.json`
+  }),
 
-    // Validate the audience and the issuer.
-    audience: '<YOUR_AUTH0_CLIENT_ID>',
-    issuer: `https://<YOUR_AUTH0_DOMAIN>/`,
-    algorithms: ['RS256']
+  // Validate the audience and the issuer.
+  audience: "s5Y2Wq6iSfIWaLy7NbdzryrNdKfGI4va",
+    issuer: `https://scottafraser.auth0.com/`,
+  algorithms: ["RS256"]
 });
 
 
